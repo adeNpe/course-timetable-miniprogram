@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "655a14586ef982d88cab0da4",
+    "username": "user1",
+    "courseName": "math",
+    "whichDay": 0,
+    "startTime": "0",
+    "endTime": "1",
+    "teacher": "Dude",
+    "group": 0,
+    "color": "0",
+    "__v": 0
+  },
+  {
+    "_id": "655a146a6ef982d88cab0da6",
+    "username": "user1",
+    "courseName": "English",
+    "whichDay": 1,
+    "startTime": "2",
+    "endTime": "3",
+    "teacher": "Bruh",
+    "group": 1,
+    "color": "1",
+    "__v": 0
+  },
+  {
+    "_id": "655a149b6ef982d88cab0da9",
+    "username": "user1",
+    "courseName": "physic",
+    "whichDay": 2,
+    "startTime": "3",
+    "endTime": "6",
+    "teacher": "Lmao",
+    "group": 1,
+    "color": "2",
+    "__v": 0
+  },
+  {
+    "_id": "655a15056ef982d88cab0dac",
+    "username": "user1",
+    "courseName": "biology",
+    "whichDay": 0,
+    "startTime": "2",
+    "endTime": "3",
+    "teacher": "Goblin",
+    "group": 1,
+    "color": "5",
+    "__v": 0
+  }
+]

@@ -1,0 +1,13 @@
+<view class="body">
+  <search-input />
+  <addAndEditHead pageIndex="0"></addAndEditHead>
+  <view class="courseTable">
+
+    <view class="myCourseTable" wx:if="{{didILogin==true}}">
+      <!--
+        这里就用图形化表单打印（展示）从服务器接收到的来自courseTable下该用户键值的课程信息，例如始末时间、颜色、地点、老师、组……
+      -->
+    </view>
+
+  </view>
+</view>

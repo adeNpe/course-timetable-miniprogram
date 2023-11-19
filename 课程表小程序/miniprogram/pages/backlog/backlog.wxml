@@ -1,0 +1,9 @@
+<view class="body">
+  <search-input />
+  <addAndEditHead pageIndex="2"></addAndEditHead>
+  <view class="backlog">
+    <!--
+      创建、编辑（修改内容，设置提醒，删除）项目
+    -->
+  </view>
+</view>

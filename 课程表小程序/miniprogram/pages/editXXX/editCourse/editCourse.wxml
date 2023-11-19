@@ -1,0 +1,10 @@
+<view class="courses" wx:for="{{list}}" wx:key="index">
+  <view class="item">
+    <view class="number-wrapper">
+      <text class="name">{{item.courseName}}</text>
+      <view class="count-wrapper">
+        <text class="count">{{item.teacher}}</text>
+      </view>
+    </view>
+  </view>
+</view>

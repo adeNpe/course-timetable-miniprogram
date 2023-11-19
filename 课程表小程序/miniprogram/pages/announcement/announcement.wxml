@@ -1,0 +1,7 @@
+<view class="body">
+  <search-input />
+  <addAndEditHead pageIndex="1"></addAndEditHead>
+  <view class="announcement">
+    
+  </view>
+</view>
