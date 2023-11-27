@@ -10,6 +10,12 @@
   </view>
   <view class="loggedin" wx:if="{{didILogin==true}}">
     <text class="loggedin_ID">欢迎, {{usernameDisplay}}</text>
+    <picker bindchange="bindPickerChange" value="{{accountStatus}}" range="{{array}}">
+      <view class="status_picker">
+        {{array[accountStatus]}}
+      </view>
+    </picker>
+    <button class="setStatus_button" bind:tap="setStatus">设置状态</button>
     <button class="toLogout_button" bind:tap="toLogout">退出登录</button>
   </view>
 </view>

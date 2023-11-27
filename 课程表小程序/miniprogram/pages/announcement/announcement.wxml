@@ -2,7 +2,6 @@
   <view slot="content">公告</view>
 </cu-custom>
 <view class="body">
-  <search-input />
   <addAndEditHead pageIndex="1"></addAndEditHead>
   <view class="container">
     <view class="announcement" wx:for="{{list}}" wx:key="index">

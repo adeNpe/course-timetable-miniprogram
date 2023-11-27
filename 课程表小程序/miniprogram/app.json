@@ -14,10 +14,10 @@
     "pages/editXXX/editBacklog/editBacklog",
     "pages/editXXX/editAnnouncement/editAnnouncement",
     "pages/editXXX/editCourse/editCourse",
-    "pages/unloginNotice/unloginNotice",
     "pages/editXXX/editAnnouncement/editInput",
     "pages/editXXX/editCourse/editInput",
-    "pages/editXXX/editBacklog/editInput"
+    "pages/editXXX/editBacklog/editInput",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -55,9 +55,6 @@
         "text": "我",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me_active.png"
-      },
-      {
-        "pagePath": "pages/unloginNotice/unloginNotice"
       }
     ]
   },

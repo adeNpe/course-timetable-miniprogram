@@ -30,7 +30,8 @@ Page({
       url: "http://localhost:3000/api/register",
       data: {
         "username": data.detail.value.username_value,
-        "password": data.detail.value.password_value
+        "password": data.detail.value.password_value,
+        "accountStatus": 0 as number
       },
       header: {
         'content-type': 'application/json'

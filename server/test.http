@@ -1,6 +1,6 @@
-@url=http://localhost:3000/api
+@url=http://localhost:3001/api
+@url_admin=http://localhost:3001/admin
 @json=Content-Type: application/json
-
 
 ###查看用户库API
 get {{url}}/users
@@ -13,6 +13,25 @@ get {{url}}/backlogs
 
 ###查看公告库API
 get {{url}}/announcements
+
+###设置管理员
+post {{url_admin}}/set
+{{json}}
+
+{
+    "username": "user1",
+    "admin": true
+}
+
+###查询课程
+post {{url_admin}}/course-search
+{{json}}
+
+{
+    "courseName": "幽默1"
+}
+#################### 以上为服务器数据库管理 ####################
+####################### 以下为用户端API #######################
 
 ###注册接口
 post {{url}}/register

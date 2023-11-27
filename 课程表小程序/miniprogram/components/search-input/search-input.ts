@@ -1,3 +1,5 @@
+import { native } from "XrFrame/kanata/lib/backend/native/worker"
+
 Component({
 
   /**
@@ -17,6 +19,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    gotoSearchPage(){
+      wx.navigateTo({
+        url: "../../pages/search/search"
+      })
+    }
   }
 })

@@ -6,7 +6,7 @@ const { User, Course, Backlog, Announcement } = require('./db');
 const app = express();
 app.use(express.json())
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('server running!');
 })
 
@@ -45,7 +45,8 @@ app.post("/api/register", async (req, res) => { //管理员权限是调用api来
     if (!userFind) {
         const user = await User.create({
             username: req.body.username,
-            password: req.body.password
+            password: req.body.password,
+            accountStatus: req.body.accountStatus
         })
         res.send(user);
     }
@@ -71,6 +72,31 @@ app.post("/api/login", async (req, res) => {
         })
     }
     res.send(user)
+})
+
+app.post("/api/me/set-status", async (req, res) => {
+    let username = {
+        username: req.body.username
+    }
+    let updateInfo = {
+        accountStatus: req.body.accountStatus
+    }
+    console.log(req.body.username)
+    console.log(req.body.accountStatus)
+    await User.updateOne(
+        username,
+        updateInfo
+    )
+    res.send("")
+})
+
+app.post("/api/me/get-status", async (req, res) => {
+    const userFind = await User.findOne({
+        username: req.body.username
+    })
+    console.log(req.body.username)
+    console.log(req.body.accountStatus)
+    res.send(userFind)
 })
 
 app.post("/api/course/new", async (req, res) => {
@@ -100,6 +126,24 @@ app.post("/api/course/get-all-courses", async (req, res) => {
     }
     console.log(courses)
     res.send(courses);
+})
+
+app.post("/api/course/search", async (req, res) => {
+    const course = await Course.findOne({
+        username: req.body.username,
+        courseName: req.body.courseName
+    })
+    if (!course) {
+        console.log(req.body.username, req.body.courseName)
+        console.log("无课程")
+        res.status(404).send({
+            message: "找不到课程"
+        })
+        return
+    }
+    else {
+        res.send(course)
+    }
 })
 
 app.post("/api/course/get-specific-course", async (req, res) => {
@@ -241,6 +285,43 @@ app.post("/api/backlog/edit", async (req, res) => {
     res.send("")
 })
 
+app.post("/admin/set", async (req, res) => {
+    let username = {
+        username: req.body.username
+    }
+    const user = User.findOne(username)
+    if (user) {
+        let updateInfo = {
+            admin: req.body.admin
+        }
+        await User.updateOne(
+            username,
+            updateInfo
+        )
+        console.log("设置成功!")
+        console.log(user)
+    }
+    else {
+        console.log("用户不存在!")
+    }
+})
+
+app.post("/admin/course-search", async (req, res) => {
+    const course = await Course.find({
+        courseName: req.body.courseName
+    })
+    if (!course) {
+        console.log(req.body.courseName)
+        console.log("无课程")
+        res.status(404).send({
+            message: "找不到课程"
+        })
+        return
+    }
+    else {
+        res.send(course)
+    }
+})
 
 
 

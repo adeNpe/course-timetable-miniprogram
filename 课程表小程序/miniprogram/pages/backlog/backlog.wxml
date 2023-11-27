@@ -2,7 +2,6 @@
   <view slot="content">备忘录</view>
 </cu-custom>
 <view class="body">
-  <search-input />
   <addAndEditHead pageIndex="2"></addAndEditHead>
   <view class="container">
     <view class="backlog {{item.shouldIRemind == true?'remindingAlarm':' '}}" wx:for="{{list}}" wx:key="index">

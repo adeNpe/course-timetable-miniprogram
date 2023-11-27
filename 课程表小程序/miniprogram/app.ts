@@ -4,8 +4,8 @@ App<IAppOption>({
     didILogin: false, // 这里太脑瘫了
     usernameDisplay: '',
     amIAdministrator: false,
-    StatusBar:0,
-    CustomBar:0
+    StatusBar: 0,
+    CustomBar: 0
   },
   onLaunch() {
     // 展示本地存储能力
@@ -13,7 +13,7 @@ App<IAppOption>({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
         let custom = wx.getMenuButtonBoundingClientRect();
-        this.globalData.Custom = custom;  
+        this.globalData.Custom = custom;
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
     })
